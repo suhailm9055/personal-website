@@ -141,7 +141,7 @@
 			document.getElementById("errorname").innerHTML="Name Cannot be Empty";
 		// }else if(!namecheck.test(name)){
 		}else if(name == name.match(/^[a-zA-Z]+$/)){
-			$('#name').css('background-color' ,'#e8f0fe');
+			
 			$('#name').css('border-color', '#666');
 			$('#name').css('color','#111');
 			document.getElementById("errorname").innerHTML="";
