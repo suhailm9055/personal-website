@@ -119,7 +119,8 @@
 		var email = $('#email').val();
 		var subject = $('#subject').val();
 		var message = $('#message').val();
-
+		
+		
 		/* in the next section we do the checking by using VARIABLE.length
 		where VARIABLE is the variable we are checking (like name, email),
 		length is a JavaScript function to get the number of characters.
@@ -131,29 +132,84 @@
 		The only difference from these checks is the email checking, we have
 		email.indexOf('@') which checks if there is @ in the email input field.
 		This JavaScript function will return -1 if no occurrence have been found.*/
+		var namecheck =  /^[a-zA-Z]$/;
 		if (name.length === 0) {
 			var error = true;
 			$('#name').css('border-color', '#D8000C');
-		} else {
+			$('#name').css('background-color' ,'#591713');
+			$('#name').css('color','#fff');
+			document.getElementById("errorname").innerHTML="Name Cannot be Empty";
+		// }else if(!namecheck.test(name)){
+		}else if(name == name.match(/^[a-zA-Z]+$/)){
+			$('#name').css('background-color' ,'#e8f0fe');
 			$('#name').css('border-color', '#666');
+			$('#name').css('color','#111');
+			document.getElementById("errorname").innerHTML="";
+		} else{
+			
+			var error = true;
+			$('#name').css('border-color', '#D8000C');
+			$('#name').css('background-color' ,'#591713');
+			$('#name').css('color','#fff');
+			document.getElementById("errorname").innerHTML="Please input a valid name ";
 		}
-		if (email.length === 0 || email.indexOf('@') === '-1') {
+		var emailCheck =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+		if (email.length === 0 ) {
 			var error = true;
 			$('#email').css('border-color', '#D8000C');
-		} else {
+			$('#email').css('color','#fff');
+			$('#email').css('background-color' ,'#591713');
+			document.getElementById("erroremail").innerHTML="Email Cannot be Empty";
+		// } else if(email.indexOf('@') === '-1'){
+		}else if(emailCheck.test(email)){
+			
 			$('#email').css('border-color', '#666');
+			$('#email').css('background-color' ,'#e8f0fe');
+			$('#email').css('color','#111');
+			document.getElementById("erroremail").innerHTML="";
+		}else{
+			var error = true;
+			$('#email').css('border-color', '#D8000C');
+			$('#email').css('color','#fff');
+			$('#email').css('background-color' ,'#591713');
+			document.getElementById("erroremail").innerHTML="Please input a valid email address!";
 		}
 		if (subject.length === 0) {
 			var error = true;
 			$('#subject').css('border-color', '#D8000C');
-		} else {
+			$('#subject').css('color','#fff');
+			$('#subject').css('background-color' ,'#591713');
+			document.getElementById("errorsub").innerHTML="Subject Cannot be Empty ";
+		} else if(subject.length<5){
+			var error = true;
+			$('#subject').css('border-color', '#D8000C');
+			$('#subject').css('background-color' ,'#591713');
+			$('#subject').css('color','#fff');
+			document.getElementById("errorsub").innerHTML="Please type alteast 5 charecters ";
+			
+		}else{
 			$('#subject').css('border-color', '#666');
+			$('#subject').css('background-color' ,'#e8f0fe');
+			$('#subject').css('color','#111');
+			document.getElementById("errorsub").innerHTML="";
 		}
 		if (message.length === 0) {
 			var error = true;
 			$('#message').css('border-color', '#D8000C');
-		} else {
+			$('#message').css('color','#fff');
+			$('#message').css('background-color' ,'#591713');
+			document.getElementById("errormsg").innerHTML="Message Cannot be Empty ";
+		} else if(message.length<5){
+			var error = true;
+			$('#message').css('border-color', '#D8000C');
+			$('#message').css('background-color' ,'#591713');
+			$('#message').css('color','#fff');
+			document.getElementById("errormsg").innerHTML="Please type alteast 5 charecters ";
+		}else{
 			$('#message').css('border-color', '#666');
+			$('#message').css('background-color' ,'#e8f0fe');
+			$('#message').css('color','#111');
+			document.getElementById("errormsg").innerHTML="";
 		}
 
 		//now when the validation is done we check if the error variable is false (no errors)

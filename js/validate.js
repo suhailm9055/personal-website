@@ -11,26 +11,26 @@
 // 	}
 // }
 
-$(document).ready(function(){
-	$("#contact-form").validate({
-		rules:{
-			name:{
-				required:true,
-				minlength:5,
-				lettersonly:true
-			},
-			email:{
-				required:true,
-				email:true
-			},
-			subject:{
-				required:true,
-				minlength:3
-			}
-		}
-	})
+// $(document).ready(function(){
+// 	$("#contact-form").validate({
+// 		rules:{
+// 			name:{
+// 				required:true,
+// 				minlength:5,
+// 				lettersonly:true
+// 			},
+// 			email:{
+// 				required:true,
+// 				email:true
+// 			},
+// 			subject:{
+// 				required:true,
+// 				minlength:3
+// 			}
+// 		}
+// 	})
 
 
 	
 
-})
+// })
