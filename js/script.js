@@ -107,139 +107,172 @@
 	/* ========================================================================= */
 
 
-	$('#contact-submit').click(function (e) {
-
-		//stop the form from being submitted
-		e.preventDefault();
-
-		/* declare the variables, var error is the variable that we use on the end
-		to determine if there was an error or not */
-		var error = false;
-		var name = $('#name').val();
-		var email = $('#email').val();
-		var subject = $('#subject').val();
-		var message = $('#message').val();
+// 	$('#contact-submit').click(function (e) {
+		
+// 		//stop the form from being submitted
+// 		e.preventDefault();
+// var error = false;
+// 	var name = $('#name').val();
+// 	var email = $('#email').val();
+// 	var subject = $('#subject').val();
+// 	var message = $('#message').val();
+// 		/* declare the variables, var error is the variable that we use on the end
+// 		to determine if there was an error or not */
 		
 		
-		/* in the next section we do the checking by using VARIABLE.length
-		where VARIABLE is the variable we are checking (like name, email),
-		length is a JavaScript function to get the number of characters.
-		And as you can see if the num of characters is 0 we set the error
-		variable to true and show the name_error div with the fadeIn effect. 
-		if it's not 0 then we fadeOut the div( that's if the div is shown and
-		the error is fixed it fadesOut. 
 		
-		The only difference from these checks is the email checking, we have
-		email.indexOf('@') which checks if there is @ in the email input field.
-		This JavaScript function will return -1 if no occurrence have been found.*/
-		var namecheck =  /^[a-zA-Z]$/;
-		if (name.length === 0) {
-			var error = true;
-			$('#name').css('border-color', '#D8000C');
-			$('#name').css('background-color' ,'#591713');
-			$('#name').css('color','#fff');
-			document.getElementById("errorname").innerHTML="Name Cannot be Empty";
-		// }else if(!namecheck.test(name)){
-		}else if(name == name.match(/^[a-zA-Z]+$/)){
+// 		/* in the next section we do the checking by using VARIABLE.length
+// 		where VARIABLE is the variable we are checking (like name, email),
+// 		length is a JavaScript function to get the number of characters.
+// 		And as you can see if the num of characters is 0 we set the error
+// 		variable to true and show the name_error div with the fadeIn effect. 
+// 		if it's not 0 then we fadeOut the div( that's if the div is shown and
+// 		the error is fixed it fadesOut. 
+		
+// 		The only difference from these checks is the email checking, we have
+// 		email.indexOf('@') which checks if there is @ in the email input field.
+// 		This JavaScript function will return -1 if no occurrence have been found.*/
+// 		var namecheck =  /^[a-zA-Z]$/;
+// 		if (name.length === 0) {
+// 			var error = true;
+// 			$('#name').css('border-color', '#D8000C');
 			
-			$('#name').css('border-color', '#666');
-			$('#name').css('color','#111');
-			document.getElementById("errorname").innerHTML="";
-		} else{
+// 			$('#name').css('color','#fff');
+// 			document.getElementById("errorname").innerHTML="Name Cannot be Empty";
+		
+// 		}else if(name == name.match(/^[a-zA-Z]+$/)){
+// 			var error = false;
+// 			$('#name').css('background-color' ,'#e8f0fe');
+// 			$('#name').css('border-color', '#666');
+// 			$('#name').css('color','#111');
+// 			document.getElementById("errorname").innerHTML="";
+// 		} else{
 			
-			var error = true;
-			$('#name').css('border-color', '#D8000C');
-			$('#name').css('background-color' ,'#591713');
-			$('#name').css('color','#fff');
-			document.getElementById("errorname").innerHTML="Please input a valid name ";
-		}
-		var emailCheck =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-		if (email.length === 0 ) {
-			var error = true;
-			$('#email').css('border-color', '#D8000C');
-			$('#email').css('color','#fff');
-			$('#email').css('background-color' ,'#591713');
-			document.getElementById("erroremail").innerHTML="Email Cannot be Empty";
-		// } else if(email.indexOf('@') === '-1'){
-		}else if(emailCheck.test(email)){
+// 			var error = true;
+// 			$('#name').css('border-color', '#D8000C');
+		
+// 			$('#name').css('color','#fff');
+// 			document.getElementById("errorname").innerHTML="Please input a valid name ";
+// 		}
+// 		var emailCheck =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+// 		if (email.length === 0 ) {
+// 			var error = true;
+// 			$('#email').css('border-color', '#D8000C');
+// 			$('#email').css('color','#fff');
+		
+// 			document.getElementById("erroremail").innerHTML="Email Cannot be Empty";
+// 		// } else if(email.indexOf('@') === '-1'){
+// 		}else if(emailCheck.test(email)){
+// 			var error = false;
+// 			$('#email').css('border-color', '#666');
+// 			$('#email').css('background-color' ,'#e8f0fe');
+// 			$('#email').css('color','#111');
+// 			document.getElementById("erroremail").innerHTML="";
+// 		}else{
+// 			var error = true;
+// 			$('#email').css('border-color', '#D8000C');
+// 			$('#email').css('color','#fff');
 			
-			$('#email').css('border-color', '#666');
-			$('#email').css('background-color' ,'#e8f0fe');
-			$('#email').css('color','#111');
-			document.getElementById("erroremail").innerHTML="";
-		}else{
-			var error = true;
-			$('#email').css('border-color', '#D8000C');
-			$('#email').css('color','#fff');
-			$('#email').css('background-color' ,'#591713');
-			document.getElementById("erroremail").innerHTML="Please input a valid email address!";
-		}
-		if (subject.length === 0) {
-			var error = true;
-			$('#subject').css('border-color', '#D8000C');
-			$('#subject').css('color','#fff');
-			$('#subject').css('background-color' ,'#591713');
-			document.getElementById("errorsub").innerHTML="Subject Cannot be Empty ";
-		} else if(subject.length<5){
-			var error = true;
-			$('#subject').css('border-color', '#D8000C');
-			$('#subject').css('background-color' ,'#591713');
-			$('#subject').css('color','#fff');
-			document.getElementById("errorsub").innerHTML="Please type alteast 5 charecters ";
+// 			document.getElementById("erroremail").innerHTML="Please input a valid email address!";
+// 		}
+// 		if (subject.length === 0) {
+// 			var error = true;
+// 			$('#subject').css('border-color', '#D8000C');
+// 			$('#subject').css('color','#fff');
 			
-		}else{
-			$('#subject').css('border-color', '#666');
-			$('#subject').css('background-color' ,'#e8f0fe');
-			$('#subject').css('color','#111');
-			document.getElementById("errorsub").innerHTML="";
-		}
-		if (message.length === 0) {
-			var error = true;
-			$('#message').css('border-color', '#D8000C');
-			$('#message').css('color','#fff');
-			$('#message').css('background-color' ,'#591713');
-			document.getElementById("errormsg").innerHTML="Message Cannot be Empty ";
-		} else if(message.length<5){
-			var error = true;
-			$('#message').css('border-color', '#D8000C');
-			$('#message').css('background-color' ,'#591713');
-			$('#message').css('color','#fff');
-			document.getElementById("errormsg").innerHTML="Please type alteast 5 charecters ";
-		}else{
-			$('#message').css('border-color', '#666');
-			$('#message').css('background-color' ,'#e8f0fe');
-			$('#message').css('color','#111');
-			document.getElementById("errormsg").innerHTML="";
-		}
+// 			document.getElementById("errorsub").innerHTML="Subject Cannot be Empty ";
+// 		} else if(subject.length<5){
+// 			var error = true;
+// 			$('#subject').css('border-color', '#D8000C');
+			
+// 			$('#subject').css('color','#fff');
+// 			document.getElementById("errorsub").innerHTML="Please type alteast 5 charecters ";
+			
+// 		}else{
+// 			var error = false;
+// 			$('#subject').css('border-color', '#666');
+// 			$('#subject').css('background-color' ,'#e8f0fe');
+// 			$('#subject').css('color','#111');
+// 			document.getElementById("errorsub").innerHTML="";
+// 		}
+// 		if (message.length === 0) {
+// 			var error = true;
+// 			$('#message').css('border-color', '#D8000C');
+// 			$('#message').css('color','#fff');
+			
+// 			document.getElementById("errormsg").innerHTML="Message Cannot be Empty ";
+// 		} else if(message.length<5){
+// 			var error = true;
+// 			$('#message').css('border-color', '#D8000C');
+			
+// 			$('#message').css('color','#fff');
+// 			document.getElementById("errormsg").innerHTML="Please type alteast 5 charecters ";
+// 		}else{
+// 			var error = false;
+// 			$('#message').css('border-color', '#666');
+// 			$('#message').css('background-color' ,'#e8f0fe');
+// 			$('#message').css('color','#111');
+// 			document.getElementById("errormsg").innerHTML="";
+// 		}
 
-		//now when the validation is done we check if the error variable is false (no errors)
-		if (error === false) {
-			//disable the submit button to avoid spamming
-			//and change the button text to Sending...
-			$('#contact-submit').attr({
-				'disabled': 'false',
-				'value': 'Sending...'
-			});
+// 		//now when the validation is done we check if the error variable is false (no errors)
+// 		if (error === false) {
+// 			//disable the submit button to avoid spamming
+// 			//and change the button text to Sending...
+// 			$('#contact-submit').attr({
+// 				'disabled': 'false',
+// 				'value': 'Sending...'
+// 			});
 
-			/* using the jquery's post(ajax) function and a lifesaver
-			function serialize() which gets all the data from the form
-			we submit it to send_email.php */
-			$.post('sendmail.php', $('#contact-form').serialize(), function (result) {
-				//and after the ajax request ends we check the text returned
-				if (result === 'sent') {
-					//if the mail is sent remove the submit paragraph
-					$('#cf-submit').remove();
-					//and show the mail success div with fadeIn
-					$('#mail-success').fadeIn(500);
-				} else {
-					//show the mail failed div
-					$('#mail-fail').fadeIn(500);
-					//re enable the submit button by removing attribute disabled and change the text back to Send The Message
-					$('#contact-submit').removeAttr('disabled').attr('value', 'Send The Message');
-				}
-			});
-		}
-	});
+			
+
+// 			/* using the jquery's post(ajax) function and a lifesaver
+// 			function serialize() which gets all the data from the form
+// 			we submit it to send_email.php */
+// 			$.post('sendmail.php', $('#contact-form').serialize(), function (result) {
+// 				//and after the ajax request ends we check the text returned
+// 				if (result === 'sent') {
+// 					//if the mail is sent remove the submit paragraph
+// 					$('#cf-submit').remove();
+// 					//and show the mail success div with fadeIn
+// 					$('#mail-success').fadeIn(500);
+// 				} else {
+// 					//show the mail failed div
+// 					$('#mail-fail').fadeIn(500);
+// 					//re enable the submit button by removing attribute disabled and change the text back to Send The Message
+// 					$('#contact-submit').removeAttr('disabled').attr('value', 'Send The Message');
+// 				}
+// 			})
+			
+// 		}
+		
+
+	
+		
+// 	});
+	// if(name!=0&&email!=0&&subject!=0&&message!=0){
+	// 	$("#contact-form").submit((e)=>{
+			
+	// 		e.preventDefault()
+	// 		$.ajax({
+	// 			url:"https://script.google.com/macros/s/AKfycbyvCPI5usFZx7atGY8_aZWMaNu0_YiQ1k4OUvoAii_ZQXtgdAzmcZx97qm9yMqzYXOG/exec",
+	// 			data:$("#contact-submit").serialize(),
+	// 			method:"post",
+	// 			success:function (response){
+	// 				alert("Form submitted successfully")
+	// 				window.location.reload()
+	// 				//window.location.href="https://google.com"
+	// 			},
+	// 			error:function (err){
+	// 				alert("Something Error")
+	
+	// 			}
+	// 		})
+	   
+			
+	// 	});	  
+	// }
+
 
 })(jQuery);
 // End Jquery Function
