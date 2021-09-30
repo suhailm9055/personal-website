@@ -754,7 +754,7 @@ Start Counter Section
                   class="form-control"
                   name="name"
                   id="name"
-                />
+                required/>
                 <span id="errorname" style="color: #d8000c"></span>
               </div>
 
@@ -765,7 +765,7 @@ Start Counter Section
                   class="form-control"
                   name="email"
                   id="email"
-                />
+                required/>
                 <span id="erroremail" style="color: #d8000c"></span>
               </div>
 
@@ -776,7 +776,7 @@ Start Counter Section
                   class="form-control"
                   name="subject"
                   id="subject"
-                />
+                required/>
                 <span id="errorsub" style="color: #d8000c"></span>
               </div>
 
@@ -987,102 +987,103 @@ Start Counter Section
     <script>
 
 
+      //   $('#contact-form').submit(function (e) {
+
+      //     //stop the form from being submitted
+      //     e.preventDefault();
+      // var error = false;
+      //         var name = $('#name').val();
+      //           var email = $('#email').val();
+      //           var subject = $('#subject').val();
+      //           var message = $('#message').val();
+      //         var namecheck =  /^[a-zA-Z]$/;
+      // if (name.length === 0) {
+      //     var error = true;
+      //     $('#name').css('border-color', '#D8000C');
+
+      //     $('#name').css('color','#fff');
+      //     document.getElementById("errorname").innerHTML="Name Cannot be Empty";
+
+      // }else if(name == name.match(/^[a-zA-Z]+$/)){
+      //     var error = false;
+      //     $('#name').css('background-color' ,'#e8f0fe');
+      //     $('#name').css('border-color', '#666');
+      //     $('#name').css('color','#111');
+      //     document.getElementById("errorname").innerHTML="";
+      // } else{
+
+      //     var error = true;
+      //     $('#name').css('border-color', '#D8000C');
+
+      //     $('#name').css('color','#fff');
+      //     document.getElementById("errorname").innerHTML="Please input a valid name ";
+      // }
+      // var emailCheck =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+      // if (email.length === 0 ) {
+      //     var error = true;
+      //     $('#email').css('border-color', '#D8000C');
+      //     $('#email').css('color','#fff');
+
+      //     document.getElementById("erroremail").innerHTML="Email Cannot be Empty";
+      // // } else if(email.indexOf('@') === '-1'){
+      // }else if(emailCheck.test(email)){
+      //     var error = false;
+      //     $('#email').css('border-color', '#666');
+      //     $('#email').css('background-color' ,'#e8f0fe');
+      //     $('#email').css('color','#111');
+      //     document.getElementById("erroremail").innerHTML="";
+      // }else{
+      //     var error = true;
+      //     $('#email').css('border-color', '#D8000C');
+      //     $('#email').css('color','#fff');
+
+      //     document.getElementById("erroremail").innerHTML="Please input a valid email address!";
+      // }
+      // if (subject.length === 0) {
+      //     var error = true;
+      //     $('#subject').css('border-color', '#D8000C');
+      //     $('#subject').css('color','#fff');
+
+      //     document.getElementById("errorsub").innerHTML="Subject Cannot be Empty ";
+      // } else if(subject.length<5){
+      //     var error = true;
+      //     $('#subject').css('border-color', '#D8000C');
+
+      //     $('#subject').css('color','#fff');
+      //     document.getElementById("errorsub").innerHTML="Please type alteast 5 charecters ";
+
+      // }else{
+      //     var error = false;
+      //     $('#subject').css('border-color', '#666');
+      //     $('#subject').css('background-color' ,'#e8f0fe');
+      //     $('#subject').css('color','#111');
+      //     document.getElementById("errorsub").innerHTML="";
+      // }
+      // if (message.length === 0) {
+      //     var error = true;
+      //     $('#message').css('border-color', '#D8000C');
+      //     $('#message').css('color','#fff');
+
+      //     document.getElementById("errormsg").innerHTML="Message Cannot be Empty ";
+      // } else if(message.length<5){
+      //     var error = true;
+      //     $('#message').css('border-color', '#D8000C');
+
+      //     $('#message').css('color','#fff');
+      //     document.getElementById("errormsg").innerHTML="Please type alteast 5 charecters ";
+      // }else{
+      //     var error = false;
+      //     $('#message').css('border-color', '#666');
+      //     $('#message').css('background-color' ,'#e8f0fe');
+      //     $('#message').css('color','#111');
+      //     document.getElementById("errormsg").innerHTML="";
+      // }
+      //   })
+
         $('#contact-form').submit(function (e) {
-
-          //stop the form from being submitted
           e.preventDefault();
-      var error = false;
-              var name = $('#name').val();
-                var email = $('#email').val();
-                var subject = $('#subject').val();
-                var message = $('#message').val();
-              var namecheck =  /^[a-zA-Z]$/;
-      if (name.length === 0) {
-          var error = true;
-          $('#name').css('border-color', '#D8000C');
-
-          $('#name').css('color','#fff');
-          document.getElementById("errorname").innerHTML="Name Cannot be Empty";
-
-      }else if(name == name.match(/^[a-zA-Z]+$/)){
-          var error = false;
-          $('#name').css('background-color' ,'#e8f0fe');
-          $('#name').css('border-color', '#666');
-          $('#name').css('color','#111');
-          document.getElementById("errorname").innerHTML="";
-      } else{
-
-          var error = true;
-          $('#name').css('border-color', '#D8000C');
-
-          $('#name').css('color','#fff');
-          document.getElementById("errorname").innerHTML="Please input a valid name ";
-      }
-      var emailCheck =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-      if (email.length === 0 ) {
-          var error = true;
-          $('#email').css('border-color', '#D8000C');
-          $('#email').css('color','#fff');
-
-          document.getElementById("erroremail").innerHTML="Email Cannot be Empty";
-      // } else if(email.indexOf('@') === '-1'){
-      }else if(emailCheck.test(email)){
-          var error = false;
-          $('#email').css('border-color', '#666');
-          $('#email').css('background-color' ,'#e8f0fe');
-          $('#email').css('color','#111');
-          document.getElementById("erroremail").innerHTML="";
-      }else{
-          var error = true;
-          $('#email').css('border-color', '#D8000C');
-          $('#email').css('color','#fff');
-
-          document.getElementById("erroremail").innerHTML="Please input a valid email address!";
-      }
-      if (subject.length === 0) {
-          var error = true;
-          $('#subject').css('border-color', '#D8000C');
-          $('#subject').css('color','#fff');
-
-          document.getElementById("errorsub").innerHTML="Subject Cannot be Empty ";
-      } else if(subject.length<5){
-          var error = true;
-          $('#subject').css('border-color', '#D8000C');
-
-          $('#subject').css('color','#fff');
-          document.getElementById("errorsub").innerHTML="Please type alteast 5 charecters ";
-
-      }else{
-          var error = false;
-          $('#subject').css('border-color', '#666');
-          $('#subject').css('background-color' ,'#e8f0fe');
-          $('#subject').css('color','#111');
-          document.getElementById("errorsub").innerHTML="";
-      }
-      if (message.length === 0) {
-          var error = true;
-          $('#message').css('border-color', '#D8000C');
-          $('#message').css('color','#fff');
-
-          document.getElementById("errormsg").innerHTML="Message Cannot be Empty ";
-      } else if(message.length<5){
-          var error = true;
-          $('#message').css('border-color', '#D8000C');
-
-          $('#message').css('color','#fff');
-          document.getElementById("errormsg").innerHTML="Please type alteast 5 charecters ";
-      }else{
-          var error = false;
-          $('#message').css('border-color', '#666');
-          $('#message').css('background-color' ,'#e8f0fe');
-          $('#message').css('color','#111');
-          document.getElementById("errormsg").innerHTML="";
-      }
-        })
-
-
-                  submitHandler:function(form){
                       $.ajax({
+                        type: "POST",
                           url:"https://script.google.com/macros/s/AKfycbyvCPI5usFZx7atGY8_aZWMaNu0_YiQ1k4OUvoAii_ZQXtgdAzmcZx97qm9yMqzYXOG/exec",
                           data:$("#contact-form").serialize(),
                           method:"post",
@@ -1095,7 +1096,8 @@ Start Counter Section
 
                           }
                       })
-                  }
+                  
+                })
     </script>
   </body>
 </html>
